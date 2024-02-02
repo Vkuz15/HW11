@@ -24,9 +24,25 @@ public class Main {
         }
     }
 
+    public static void deliveryCalculation(int deliveryDistance) {
+        int days = 1;
+        if (deliveryDistance >= 0 && deliveryDistance <= 20) {
+            System.out.println("Потребуется дней " + days);
+        } else if (deliveryDistance >= 21 && deliveryDistance <= 60) {
+            int day = days + 1;
+            System.out.println("Потребуется дней " + day);
+        } else if (deliveryDistance >= 61 && deliveryDistance <= 100) {
+            int day = days + 2;
+            System.out.println("Потребуется дней " + day);
+        } else {
+            System.out.println("Свыше 100 км доставки нет");
+        }
+    }
+
     public static void main(String[] args) {
         task1 ();
         task2 ();
+        task3 ();
     }
 
     public static void task1(){
@@ -40,5 +56,12 @@ public class Main {
         int clientOS = 1;
         int currentYear = LocalDate.now().getYear();
         installingTheApplication(clientOS,currentYear);
+    }
+
+    public static void task3() {
+        System.out.println("Задание 3");
+
+        int deliveryDistance = 1;
+        deliveryCalculation(deliveryDistance);
     }
 }
